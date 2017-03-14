@@ -1,0 +1,32 @@
+// _footer.scss
+
+#colophon {
+	@include rem(margin, 0 20px);
+
+	@include media ($medium-screen-up) {
+		@include rem(margin, 0 0 20px 0);
+
+		.left, .middle, .right {
+		float: left;
+		width: 33.3333%;
+
+			h3 {
+			@include rem(font-size, 20px);
+			}
+
+		}
+		
+		.left {
+			text-align: left;
+		}
+	
+		.middle {
+			text-align: center;
+		}
+
+		.right {
+			text-align: right;
+		}
+
+	}
+}

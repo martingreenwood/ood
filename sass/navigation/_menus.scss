@@ -1,0 +1,115 @@
+.main-navigation {
+	position: absolute;
+	top: 10px;
+	right: 0;
+	width: 100%;
+
+	@include media ($medium-screen-up) {
+		top: 60px;
+		width: auto;
+	}
+	
+	ul {
+		display: none;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		ul {
+			float: left;
+			position: absolute;
+			@include rem(top, 15px);
+			@include rem(padding-top, 25px);
+			@include rem(left, -9999px);
+			z-index: 99999;
+
+			ul {
+				@include rem(left, -9999px);
+				top: 0;
+			}
+
+			li {
+				&:hover > ul,
+				&.focus > ul {
+					left: 100%;
+				}
+			}
+
+			a {
+				@include rem(width, 200px);
+			}
+
+			:hover > a,
+			.focus > a {
+			}
+
+			a:hover,
+			a.focus {
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+		}
+	}
+	li {
+		float: left;
+		position: relative;
+		font-family: $heading-font-family;
+		font-weight: 600;
+		@include rem(margin-left, 20px);
+
+		&:hover > a,
+		&.focus > a {
+			border-bottom: 2px solid $heading-color;
+		}
+	}
+	a {
+		display: block;
+		text-decoration: none;
+		@include rem(font-size, 19px);
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+	}
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+//@include media ($medium-screen-up) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+//}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		@include rem(margin, 0 0 15px);
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}

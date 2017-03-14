@@ -1,0 +1,138 @@
+// _header.scss
+
+#header {
+	position: relative;
+
+	&.internal {
+		width: 100%;
+		height: 350px;
+	}
+
+	.barbedwire {
+		background-image: url(assets/barbedwire.png);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 30px;
+ 		background-size: auto 16px;
+		background-repeat: no-repeat;
+
+		&.one {
+			bottom: 303px; 
+			background-repeat: no-repeat;
+			
+			 @include media ($large-screen-up) {
+			 	bottom: 320px;
+				background-size: auto;
+			 }
+		}	
+
+		&.two {
+			bottom: 116px;
+
+			 @include media ($large-screen-up) {
+			 	bottom: 211px;
+				background-size: auto;
+			 }
+		}	
+
+		&.three { 
+			bottom: 80px;
+
+			 @include media ($large-screen-up) {
+			 	bottom: 0;
+				background-size: auto;
+			 }
+		}	
+	}
+}
+
+#masthead {
+	//background-image: url(assets/header.png);
+    //background-position: center 158px;
+	
+	//background-repeat: no-repeat;
+    //height: 664px;
+
+    position: relative;
+	max-width: 925px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-size: contain;
+
+    @include media ($medium-screen-up) {
+    	//background-position: center 39px; 
+    	//height: 1051px;
+    	padding: 0;
+    }
+
+    .header-image {
+
+    	margin-top: 116px;
+    }
+
+	.site-branding {
+		position: absolute;
+		width: auto;
+		max-width: 671px;
+		@include rem(top, 48px);
+
+		.site-title {
+			margin: 0;
+			@include rem(font-size, 59px);
+			@include rem(word-spacing, -13px);
+			line-height: 0.875;
+			@include rem(letter-spacing, -9px);
+
+			@include media ($medium-screen-up) {
+				@include rem(font-size, 129px);
+				@include rem(word-spacing, -29px);
+				@include rem(letter-spacing, -13px);
+			}
+		}
+
+		.site-description {
+			font-family: $heading-font-family;
+			@include rem(font-size, 25px);
+			@include rem(padding-left, 3px);
+			margin: 0;
+			@include rem(word-spacing, -8px);
+			line-height: 0.875;
+			@include rem(letter-spacing, -3px);
+
+			@include media ($medium-screen-up) {
+				@include rem(font-size, 35px);
+				@include rem(padding-left, 6px);
+			}
+		}
+	}
+
+	.byline {
+	    display: block;
+	    position: absolute;
+	    bottom: 5px;
+	    width: 100%;
+    	left: 0;
+    	padding: 0 20px;
+
+    	@include media ($large-screen-up) {
+    		width: auto;
+    		left: auto;
+    		padding: 0;
+    		bottom: 76px; 
+    	}
+
+	    h3 {
+			margin: 0;
+			@include rem(font-size, 17px);
+			line-height: 1.2;
+
+			@include media ($medium-screen-up) {
+				@include rem(font-size, 24px);
+				line-height: 1.1;
+				white-space: pre;
+			}
+	    }
+	}
+}

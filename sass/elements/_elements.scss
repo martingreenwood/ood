@@ -1,0 +1,58 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+	outline: 0;
+}
+
+body {
+	background-color: $background-color; /* Fallback for when there is no custom background color defined. */
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	&.single, &.page, &.archive, &.error404, &.search {
+		background-image: url(assets/bg-internal.jpg);
+
+		@include media ($medium-screen-up) {
+			background-image: url(assets/bg-internal.jpg);	
+		}
+	}
+
+	&.home {
+		background-image: url(assets/bg-mobile.jpg);
+
+		@include media ($medium-screen-up) {
+			background-image: url(assets/bg.jpg);	
+		}
+	}
+}
+
+blockquote, q {
+	quotes: "" "";
+
+	&:before,
+	&:after {
+		content: "";
+	}
+}
+
+hr {
+	background-color: $background-hr;
+	border: 0;
+	@include rem(height, 1px);
+	@include rem(margin-bottom, 15px);
+}
+
+@import "lists";
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+@import "tables";
